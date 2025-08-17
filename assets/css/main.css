@@ -1,7 +1,3 @@
-html:root{
-    --lato-light: "Lato", sans-serif;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -40,14 +36,308 @@ img {
     height: auto;
 }
 
+/* Navbar Styling */
 .navbar {
-    background-color: #047aed;
+    background-color: var(--primary-color);
     color: #fff;
     height: 70px;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 15px;
+.navbar ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar a {
+    padding: 10px;
+    color: #fff;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+/* Show case */
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+.showcase-text {
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+
+.showcase p {
+    margin: 20px 0;    
+}
+
+.showcase::before,
+.showcase::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+}
+
+.showcase .grid {
+    overflow: visible;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
+}
+
+.showcase .card {
+    padding: 20px 40px;
+}
+
+.showcase-form input[type='text'], 
+.showcase-form input[type='email'] {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 1rem;
+}
+
+.showcase-form {
+    outline: none;
+}
+
+/* Stats styles */
+.stats {
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.stats-heading {
+    width: 500px;
+    margin: auto;
+    justify-self: center;
+
+}
+
+.stats .grid h3 {
+    font-size: 35px;
+}
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CLI styles */
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* Cloud styles */
+.cloud .grid {
+    grid-template-columns: 4fr, 3fr;
+}
+
+/* Technologies */
+.technologies .flex {
+    flex-wrap: wrap;
+}
+
+.technologies .card h4 {
+    font-size: 20px;
+    margin-bottom: 0.625rem;
+    transition: transform 0.4s ease-in;
+}
+
+.technologies .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+}
+
+.technologies .card:hover {
+    transform :translateY(-15px)
+}
+
+/* Features styles */
+.features-head img {
+    justify-self: flex-end;
+    max-width: 200px;
+    width: 100%; /* make responsive */
+}
+
+.features-sub-head img {
+    justify-self: flex-end;
+    max-width: 300px;
+    width: 100%; /* make responsive */
+}
+
+.features-main .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* vertically align icon + text */
+    padding: 1rem;
+    gap: 20px; /* replaces margin-right on icon */
+    min-height: 140px; /* allows content to expand if needed */
+}
+
+.features-main .grid {
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px; /* spacing between cards */
+    padding: 30px;
+}
+
+.features-main .grid > *:first-child {
+    grid-column: 1 / span 3;
+}
+.features-main .grid > *:nth-child(2) {
+    grid-column: 1 / span 2;
+}
+
+/* Responsive fix for mobile/tablet */
+@media (max-width: 768px) {
+    .features-main .grid {
+        grid-template-rows: auto; /* let rows size naturally */
+    }
+    .features-main .card {
+        flex-direction: column; /* stack icon + text */
+        text-align: center;
+    }
+    .features-main .grid > *:first-child,
+    .features-main .grid > *:nth-child(2) {
+        grid-column: 1; /* reset to 1 column layout */
+    }
+}
+
+
+/* Docs main */
+.docs-main .grid > *:nth-child(2) {
+    grid-column: 2 /span 3;
+}
+
+.docs-main .grid {
+    align-items: start;
+}
+
+.docs-main .card {
+    height: auto;
+    align-items: start;
+    flex-direction: column;  
+    padding: 25px 25px;  
+}
+
+.docs-main nav {
+    width: 100%;
+}
+
+.docs-main ul {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;   
+}
+
+.docs-main  h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.docs-main h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.docs-main a {
+    padding: 2px;
+    font-size: 1rem;
+    font-weight: 300;  
+    border-bottom: 1px solid#8b8686;
+}
+
+.docs-main a:hover {
+    color: rgb(38, 38, 228);
+    font-weight: 500;
+}
+
+.docs-main .btn {
+    padding: 10px 30px;
+    margin-bottom: 20px;
+}
+
+.docs-main ul li a.active {
+    text-decoration: blue;
+}
+
+.docs-main .card-ul {
+    margin-top: 20px;
+}
+
+.footer .social a {
+    margin: 0 10px;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-80%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(+80%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-80%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(+80%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

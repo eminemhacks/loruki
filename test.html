@@ -1,0 +1,116 @@
+<!-- Flex -->
+<div class="flex-container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+
+<!-- Flex Shorthand -->
+<div class="flex-shorthand">
+  <div class="item" style="flex: 2;">A</div>
+  <div class="item" style="flex: 3;">B</div>
+  <div class="item" style="flex: 4;">C</div>
+</div>
+
+<!-- Grid -->
+<div class="grid-container">
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="grid-item">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+</div>
+
+
+<style>
+/* Flex styles */
+.flex-container {
+  display: flex;         /* enables flexbox */
+  flex-direction: row;   /* horizontal layout; use column for vertical */
+  justify-content: space-around; /* space between items */
+  align-items: center;   /* vertical alignment */
+  height: 100px;
+  background: #f0f0f0;
+  border: 2px black solid;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px black solid;
+}
+
+/* Flex-shorthand styles */
+.flex-shorthand {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background: #eee;
+  padding: 100px;
+  border: 2px black solid;
+}
+
+.item {
+  background: #e74c3c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 columns */
+  grid-template-rows: auto;  
+  justify-content: center;
+  gap: 10px;
+  background: #f0f0f0;
+  margin-top: 20px;
+  border: 2px black solid;
+  padding: 10px;    
+
+}
+
+.grid-item {
+  background: #2ecc71;
+  display: grid;
+  justify-self: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  height: 100px;
+  width: 400px;
+  border: 2px black solid;
+}
+
+.grid-item p {
+  margin: 0 10px;
+  text-align: center;
+}
+</style>
